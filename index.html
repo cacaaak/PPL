@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f6b5c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="PPL Rumah">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC3ElEQVR4nO3dUU4iQRRAUZzMvy5QV6DLcQdu0CXM38Q4SQ/0LegqOedXg51XlxJoGh4eX59PsNevow+AtQmIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8nv4LX6+f2z89OntZfhf5JtbLsHD4+vzqNvaPu6vZHQlt1+CYf/Czj/0S3+ZMx2yBGMC2nE0GhrrqCXwIJpkQEC7Q7YJjXLgEtiBSAREIiASAZEIiERAJOPPhUUbTyzv5wTIQkOYawfaflni8/3jHl46WmsIEwV05lymGt9wyw1hloCciz2tOYRZAmJRAiIREImASAREIiASAZEIiERAJAIiERCJgEgERDLg2vhJTguzT3yHmh2IREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBERy8OdE/72m5NJrg2b7uOQhdg/hwCur7EAkAiIREImASAREIiASAZEIiERAJAIiERCJgEhmCeiik6M/8kzqac0hzBIQi5oooDPvUpPc865kuSFMFNDpf3N5enuZZ3DXs9YQDn5D2b+mms5RFhrCXDsQyxEQiYBIBEQiIBIBkQwIaPdzzoWerE7uwCWwA5GMCWhHyLafsY5agmE70Ipnkn+YQ5ZgwFdefrN9nbZ0buCWSzA+IO6KB9EkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiCSP4mYeWTFJpvyAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC3ElEQVR4nO3dUU4iQRRAUZzMvy5QV6DLcQdu0CXM38Q4SQ/0LegqOedXg51XlxJoGh4eX59PsNevow+AtQmIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASARE8nv4LX6+f2z89OntZfhf5JtbLsHD4+vzqNvaPu6vZHQlt1+CYf/Czj/0S3+ZMx2yBGMC2nE0GhrrqCXwIJpkQEC7Q7YJjXLgEtiBSAREIiASAZEIiERAJOPPhUUbTyzv5wTIQkOYawfaflni8/3jHl46WmsIEwV05lymGt9wyw1hloCciz2tOYRZAmJRAiIREImASAREIiASAZEIiERAJAIiERCJgEgERDLg2vhJTguzT3yHmh2IREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBERy8OdE/72m5NJrg2b7uOQhdg/hwCur7EAkAiIREImASAREIiASAZEIiERAJAIiERCJgEhmCeiik6M/8kzqac0hzBIQi5oooDPvUpPc865kuSFMFNDpf3N5enuZZ3DXs9YQDn5D2b+mms5RFhrCXDsQyxEQiYBIBEQiIBIBkQwIaPdzzoWerE7uwCWwA5GMCWhHyLafsY5agmE70Ipnkn+YQ5ZgwFdefrN9nbZ0buCWSzA+IO6KB9EkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiCSP4mYeWTFJpvyAAAAAElFTkSuQmCC">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIlBQTCBkaSBSdW1haCIsICJzaG9ydF9uYW1lIjogIlBQTCBSdW1haCIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAic3RhcnRfdXJsIjogIi4iLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMGY2YjVjIiwgInRoZW1lX2NvbG9yIjogIiMwZjZiNWMiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FJQUFBRGR2dnRRQUFBQzNFbEVRVlI0bk8zZFVVNGlRUlJBVVp6TXZ5NVFWNkRMY1FkdTBDWE0zOFE0U1EvMExlZ3FPZWRYZzUxWGx4Sm9HaDRlWDU5UHNOZXZvdytBdFFtSVJFQWtBaUlSRUltQVNBUkVJaUFTQVpFSWlFUkFKQUlpRVJDSmdFZ0VSQ0lnRWdHUkNJaEVRQ1FDSWhFUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ0VnR1JDSWhFUUNRQ0loRVFpWUJJQkVRaUlCSUJrUWlJUkVBa0FpSVJFSW1BU0FSRThudjRMWDYrZjJ6ODlPbnRaZmhmNUp0YkxzSEQ0K3Z6cU52YVB1NnZaSFFsdDErQ1lmL0N6ai8wUzMrWk14MnlCR01DMm5FMEdocnJxQ1h3SUpwa1FFQzdRN1lKalhMZ0V0aUJTQVJFSWlBU0FaRUlpRVJBSk9QUGhVVWJUeXp2NXdUSVFrT1lhd2ZhZmxuaTgvM2pIbDQ2V21zSUV3VjA1bHltR3Q5d3l3MWhsb0NjaXoydE9ZUlpBbUpSQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkRMZzJ2aEpUZ3V6VDN5SG1oMklSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ0VnR1JDSWhFUUNRQ0loRVFpWUJJQkVSeThPZEUvNzJtNU5KcmcyYjd1T1FoZGcvaHdDdXI3RUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWhtQ2VpaWs2TS84a3pxYWMwaHpCSVFpNW9vb0RQdlVwUGM4NjVrdVNGTUZORHBmM041ZW51WlozRFhzOVlRRG41RDJiK21tczVSRmhyQ1hEc1F5eEVRaVlCSUJFUWlJQklCa1F3SWFQZHp6b1dlckU3dXdDV3dBNUdNQ1doSHlMYWZzWTVhZ21FNzBJcG5rbitZUTVaZ3dGZGVmck45bmJaMGJ1Q1dTekErSU82S0I5RWtBaUlSRUltQVNBUkVJaUFTQVpFSWlFUkFKQUlpRVJDSmdFZ0VSQ0lnRWdHUkNJaEVRQ1FDSWhFUWlZQklCRVFpSUJJQmtRaUlSRUFrQWlJUkVJbUFTQVJFSWlBU0FaRUlpRVJBSkFJaUVSQ0pnRWdFUkNJZ0VnR1JDSWhFUUNRQ0loRVFpWUJJQkVRaUlCSUJrUWlJUkVBa0FpSVJFSW1BU0FSRUlpQ1NQNG1ZZVdURkpwdnlBQUFBQUVsRlRrU3VRbUNDIiwgInNpemVzIjogIjE5MngxOTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifSwgeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FJQUFBQjdHa090QUFBSlVFbEVRVlI0bk8zZFMwNGtSeFJBMGNKaURndUVGY0J5MkFFYlpBa2UyR3ExYkRXaWZwbVI3NTR6YmFrSUVTL2ladElTUER5OXZad0E2UGxyN3dVQXNBOEJBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBcU1lOUYzQmZYeCtmMTMvSTgvdnI5UjhDYk04TjhMMkhwN2VYdmRkd2V6Zlo5ZjhiUEFjd2lSdmdoNllGNEU0Yi83dDVRd0JqdUFIT011ci9BRGJZKzgyK0NuQXVOOEM1NWdSZ3kxMlpOQUV3Z3h2Z0FrTUNzUDErakprQUdNQU5jSmtKQWRockoyWk1BQnlkRytCaWh3L0F2bnN3WUFMZzBOd0ExemgyQUZiNDdxK3dCbWhhNGZTdHNJYUxIVGdBNjN6ZjExa0pkS3h6N3RaWnlia09IQUFBcm5IVUFLeVczTlhXQTdPdGR1SldXODhQSFRVQUFGeEpBQUNpRGhtQU5kKzIxbHdWekxQbVdWdHpWZDg3WkFBQXVKNEFBRVFKQUVDVUFBQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRURVNDk0TDRGOFgvekx4NS9mWDI2NEVmczdjSHBvQTdPejZQeUx4NnhPY0tEWmpibWZ3STZBOTNmWlBDQjN4RHhKeFJPWjJERzhBKzdqVDBQL3pzUjZwdUJOek80dzNnQjNjKzVISEl4WDNZRzduRVlDdGJUUGx6aEszWlc1SEVnQ0FLQUhZMUpZUE9CNm11QlZ6TzVVQWJHZjd5WGFXdUo2NUhVd0FBS0lFQUNCS0FEYXkxMXV0dDJtdVlXNW5Fd0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJRWdDQUtBRUFpQklBZ0NnQkFJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDZ0JBSWg2ZUhwNzJYc05aL3Y2K054N0NRRC85ZnordXZjU3p1TU5BQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0llOTE3QUtNL3ZyMy82cDYrUHp5MVg4cnR2VmdYZlczTnVkMXpWTU40QUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQTI4dnorbXZxNnpHQnVaeE1BZ0NnQkFJZ1NnTzFzLzFiclBacnJtZHZCQkdCVFcwNjJVOFN0bU51cEJBQWdTZ0MydHMwRGpzY29ic3ZjamlRQU83ajNsRHRGM0lPNW5lZHg3d1ZFL1RQclh4K2Y5L2hZdUJOek80dzNnRDNkZHU2ZElyWmhic2Z3QnJDelg5Ti84Vk9WODhQMnpPME1BckFLNTRFak1yZUg1a2RBQUZFQ0FCQWxBQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJBbEFBQlJod3pBbXIrQ2ZNMVZ3VHhybnJVMVYvVzlRd1lBZ09zSkFFRFVVUU93MnR2V2F1dUIyVlk3Y2F1dDU0ZU9HZ0FBcm5UZ0FLeVQzSFZXQWgzcm5MdDFWbkt1QXdmZ3RNYjNmWVUxUU5NS3AyK0ZOVnpzMkFFNDdmM2RQL1Rld3dCdWdHc2NQZ0NuL2ZiZzZIc1BNN2dCTGpZaEFLYzlkbUxBM3NNWWJvRExEQW5BYWR2OW1MSDNNSWtiNEFKekFuRGFhbGZHN0QwTTR3WTQxOFBUMjh2ZWE3aTlyNC9QZTN6c3BJMkh3ZHdBUHpRekFML2NaQTdtN1RwRXVBRytOendBQVB6SnFQOERBT0RuQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaUJBQWdTZ0FBb2dRQUlFb0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ1NnQUFvZ1FBSU9wdmw2RVRwVllKK1VJQUFBQUFTVVZPUks1Q1lJST0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<title>PPL di Rumah</title>
+<style>
+:root{--bg:#eef2f0;--card:#fff;--ink:#14231e;--mute:#5d6f68;--line:#d5dfdb;--acc:#0f6b5c;--accsoft:#d9efe9;--on:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1815;--card:#18251f;--ink:#e8f1ed;--mute:#93a79f;--line:#2a3b34;--acc:#3ec9ac;--accsoft:#1c3a32;--on:#08120f}}
+:root[data-theme="dark"]{--bg:#0f1815;--card:#18251f;--ink:#e8f1ed;--mute:#93a79f;--line:#2a3b34;--acc:#3ec9ac;--accsoft:#1c3a32;--on:#08120f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
+main{max-width:520px;margin:0 auto;padding:16px 16px 110px}
+h1{font-size:26px;margin:4px 0 2px;letter-spacing:-.5px}
+.sub{color:var(--mute);margin:0 0 14px;font-size:14px}
+.week{display:flex;gap:6px;margin-bottom:14px}
+.week button{flex:1;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 0;font:inherit;font-size:12px;cursor:pointer}
+.week button b{display:block;font-size:14px}
+.week button.sel{background:var(--acc);color:var(--on);border-color:var(--acc)}
+.week button.today{outline:2px solid var(--acc);outline-offset:1px}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden;margin:6px 0 16px}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.ex.done{border-color:var(--acc);background:var(--accsoft)}
+.ex h3{margin:0;font-size:17px}
+.ex p{margin:2px 0 10px;color:var(--mute);font-size:13px}
+.sets{display:flex;gap:8px;flex-wrap:wrap}
+.sets button{width:46px;height:46px;border-radius:50%;border:2px solid var(--acc);background:transparent;color:var(--acc);font:inherit;font-weight:700;cursor:pointer}
+.sets button.on{background:var(--acc);color:var(--on)}
+button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.how{margin-top:10px;background:none;border:none;color:var(--acc);font:inherit;font-size:14px;font-weight:700;cursor:pointer;padding:4px 0}
+.guide{margin-top:8px;padding:10px 12px;background:var(--bg);border-radius:10px;font-size:14px}
+.guide ol{margin:0 0 8px;padding-left:20px}.guide a{color:var(--acc);font-weight:700}
+.rest{text-align:center;padding:30px 10px;color:var(--mute)}
+.tips{font-size:13px;color:var(--mute);margin-top:16px;line-height:1.6}
+.reset{background:none;border:none;color:var(--mute);text-decoration:underline;font:inherit;font-size:13px;cursor:pointer;margin-top:8px}
+.timer{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:8px;justify-content:center}
+.timer .t{font-size:26px;font-weight:700;min-width:70px;text-align:center;font-variant-numeric:tabular-nums}
+.timer button{border:1px solid var(--acc);background:transparent;color:var(--acc);border-radius:20px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer}
+.timer .go{background:var(--acc);color:var(--on)}
+</style>
+</head>
+<body>
+<main>
+  <h1>PPL di Rumah</h1>
+  <p class="sub" id="sub"></p>
+  <div class="week" id="week"></div>
+  <div id="content"></div>
+</main>
+<div class="timer">
+  <button id="t60">60 dtk</button>
+  <div class="t" id="tv">0:00</div>
+  <button id="t90" class="go">90 dtk</button>
+</div>
+<script>
+var PLAN={
+ Push:[["Push-up (biasa/diamond/decline)","Sampai mendekati gagal",4],["Dumbbell shoulder press","10-15 repetisi",3],["Dumbbell floor press","12-15 repetisi",3],["Lateral raise","15 repetisi",3],["Overhead tricep extension","12-15 repetisi",3]],
+ Pull:[["Pull-up / chin-up","Sebisanya",4],["One-arm dumbbell row","12 repetisi per sisi",4],["Reverse fly","15 repetisi",3],["Dumbbell curl","12-15 repetisi",3],["Hammer curl","12-15 repetisi",3]],
+ Legs:[["Bulgarian split squat","10-12 repetisi per kaki",3],["Goblet squat","15 repetisi",3],["Dumbbell Romanian deadlift","12-15 repetisi",3],["Lunges","12 repetisi per kaki",3],["Calf raise satu kaki","15-20 repetisi",4]]
+};
+var HOW={
+"Push-up (biasa/diamond/decline)":["Tangan selebar bahu, badan lurus dari kepala ke tumit.","Turunkan dada sampai hampir menyentuh lantai, siku sekitar 45°.","Dorong naik tanpa pinggul turun. Diamond: tangan dirapatkan. Decline: kaki di kursi."],
+"Dumbbell shoulder press":["Berdiri atau duduk, dumbbell setinggi bahu, telapak menghadap depan.","Dorong ke atas sampai lengan hampir lurus.","Turunkan pelan ke posisi awal, perut tetap kencang."],
+"Dumbbell floor press":["Berbaring telentang, lutut ditekuk, dumbbell di tiap tangan.","Turunkan sampai siku menyentuh lantai.","Dorong ke atas sampai lengan lurus."],
+"Lateral raise":["Berdiri, dumbbell di samping badan, siku sedikit menekuk.","Angkat ke samping sampai setinggi bahu.","Turunkan pelan 2-3 detik, jangan mengayun."],
+"Overhead tricep extension":["Pegang satu dumbbell dengan dua tangan di atas kepala.","Tekuk siku, turunkan dumbbell ke belakang kepala.","Luruskan lengan ke atas, siku tetap dekat kepala."],
+"Pull-up / chin-up":["Pegang bar, pull-up: telapak menghadap depan; chin-up: menghadap ke arah kamu.","Tarik dada ke bar dengan menarik siku ke bawah.","Turun pelan sampai lengan lurus. Belum kuat? Loncat naik lalu turun 5 detik."],
+"One-arm dumbbell row":["Satu tangan dan lutut bertumpu di kursi/kasur, punggung datar.","Tarik dumbbell ke arah pinggul, siku dekat badan.","Turunkan pelan sampai lengan lurus, lalu ganti sisi."],
+"Reverse fly":["Membungkuk dari pinggul, punggung datar, dumbbell menggantung.","Angkat kedua lengan ke samping sampai setinggi bahu.","Peras tulang belikat, turunkan pelan."],
+"Dumbbell curl":["Berdiri, dumbbell di samping badan, telapak menghadap depan.","Tekuk siku, angkat ke arah bahu tanpa mengayun badan.","Turunkan pelan sampai lengan lurus."],
+"Hammer curl":["Sama seperti curl, tapi telapak saling berhadapan (seperti memegang palu).","Angkat ke arah bahu, siku tetap di sisi badan.","Turunkan pelan."],
+"Bulgarian split squat":["Kaki belakang bertumpu di kursi, kaki depan melangkah ke depan.","Turunkan badan sampai paha depan sejajar lantai.","Dorong naik lewat tumit kaki depan. Selesaikan satu kaki dulu."],
+"Goblet squat":["Pegang dumbbell di depan dada, kaki selebar bahu.","Duduk ke bawah, punggung tegak, lutut searah jari kaki.","Berdiri dengan mendorong lantai lewat tumit."],
+"Dumbbell Romanian deadlift":["Berdiri, dumbbell di depan paha, lutut sedikit menekuk.","Dorong pinggul ke belakang, dumbbell meluncur di sepanjang kaki.","Turun sampai paha belakang terasa tertarik, lalu berdiri dengan mendorong pinggul ke depan."],
+"Lunges":["Berdiri tegak dengan dumbbell di tiap tangan.","Melangkah ke depan, turunkan lutut belakang hampir menyentuh lantai.","Dorong kembali ke posisi awal, ganti kaki."],
+"Calf raise satu kaki":["Berdiri satu kaki, berpegangan dinding untuk keseimbangan.","Naik sampai jinjit setinggi mungkin, tahan 1 detik.","Turun pelan. Lebih berat: pegang dumbbell dan berdiri di tepi tangga."]
+};
+var WEEK=["Rest","Push","Pull","Legs","Push","Pull","Legs"]; // index = getDay() Minggu=0
+var NAMES=["Min","Sen","Sel","Rab","Kam","Jum","Sab"];
+var openK=null,today=new Date().getDay(), sel=today, state={};
+function key(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+function load(){try{var s=JSON.parse(localStorage.getItem("ppl-rumah")||"{}");if(s.k===key())state=s.v||{}}catch(e){}}
+function save(){try{localStorage.setItem("ppl-rumah",JSON.stringify({k:key(),v:state}))}catch(e){}}
+function render(){
+  var wk=document.getElementById("week");wk.innerHTML="";
+  NAMES.forEach(function(n,i){var b=document.createElement("button");b.innerHTML=n+"<b>"+WEEK[i][0]+"</b>";
+    if(i===sel)b.className="sel";if(i===today)b.className+=" today";
+    b.onclick=function(){sel=i;render()};wk.appendChild(b)});
+  var day=WEEK[sel],c=document.getElementById("content");
+  document.getElementById("sub").textContent=(sel===today?"Hari ini":"Hari "+NAMES[sel])+": "+(day==="Rest"?"istirahat":day);
+  if(day==="Rest"){c.innerHTML='<div class="rest">Hari istirahat. Otot tumbuh saat pulih, jadi tidur cukup dan makan protein.</div>';return}
+  var list=PLAN[day],total=0,done=0;
+  var html='<div class="bar"><i id="pb"></i></div>';
+  list.forEach(function(e,ei){
+    var k=day+ei,got=state[k]||[],all=got.filter(Boolean).length===e[2];total+=e[2];done+=got.filter(Boolean).length;
+    html+='<div class="ex'+(all?" done":"")+'"><h3>'+e[0]+'</h3><p>'+e[2]+' set · '+e[1]+'</p><div class="sets">';
+    for(var s=0;s<e[2];s++)html+='<button data-k="'+k+'" data-s="'+s+'" class="'+(got[s]?"on":"")+'" aria-label="Set '+(s+1)+'">'+(s+1)+'</button>';
+    var op=openK===k;
+    html+='</div><button class="how" data-h="'+k+'" data-n="'+ei+'">'+(op?"Tutup panduan":"Lihat cara gerakan")+'</button>';
+    if(op){var st=HOW[e[0]]||[];html+='<div class="guide"><ol>'+st.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ol><a href="https://www.youtube.com/results?search_query='+encodeURIComponent(e[0]+" tutorial")+'" target="_blank" rel="noopener">Cari video di YouTube</a></div>'}
+    html+='</div>';
+  });
+  html+='<div class="tips">Pemanasan 5 menit dulu. Untuk menaikkan level: turun 3 detik, tambah repetisi tiap minggu, atau pakai versi satu sisi.</div><button class="reset" id="rs">Reset hari ini</button>';
+  c.innerHTML=html;
+  document.getElementById("pb").style.width=(total?done/total*100:0)+"%";
+  c.querySelectorAll(".sets button").forEach(function(b){b.onclick=function(){
+    var k=b.dataset.k,s=+b.dataset.s;state[k]=state[k]||[];state[k][s]=!state[k][s];save();
+    if(state[k][s])startTimer(60);render()}});
+  c.querySelectorAll(".how").forEach(function(b){b.onclick=function(){openK=openK===b.dataset.h?null:b.dataset.h;render()}});
+  document.getElementById("rs").onclick=function(){list.forEach(function(e,i){delete state[day+i]});save();render()};
+}
+var tm=null,left=0;
+function fmt(n){return Math.floor(n/60)+":"+("0"+n%60).slice(-2)}
+function startTimer(sec){clearInterval(tm);left=sec;document.getElementById("tv").textContent=fmt(left);
+  tm=setInterval(function(){left--;document.getElementById("tv").textContent=fmt(Math.max(left,0));
+    if(left<=0){clearInterval(tm);try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}}},1000)}
+document.getElementById("t60").onclick=function(){startTimer(60)};
+document.getElementById("t90").onclick=function(){startTimer(90)};
+load();render();
+</script>
+</body>
+</html>
