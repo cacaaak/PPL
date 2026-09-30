@@ -84,13 +84,52 @@ var HOW={
 "Lunges":["Berdiri tegak dengan dumbbell di tiap tangan.","Melangkah ke depan, turunkan lutut belakang hampir menyentuh lantai.","Dorong kembali ke posisi awal, ganti kaki."],
 "Calf raise satu kaki":["Berdiri satu kaki, berpegangan dinding untuk keseimbangan.","Naik sampai jinjit setinggi mungkin, tahan 1 detik.","Turun pelan. Lebih berat: pegang dumbbell dan berdiri di tepi tangga."]
 };
+var B=[100,24,100,36,100,62,100,85,100,108],H=[100,56,100,74];
+function Q(b,a,l){return b.concat(a,l||[])}
+var CU=[Q(B,H),Q(B,[102,56,114,42])];
+var ANIM={
+"Push-up (biasa/diamond/decline)":["n",Q([127,67,114,72,88,82,64,92,40,102],[114,90,114,108]),Q([127,91,114,94,88,98,64,101,40,104],[96,102,114,108])],
+"Dumbbell shoulder press":["",Q(B,[108,52,106,34]),Q(B,[102,20,103,3])],
+"Dumbbell floor press":["",Q([28,100,44,102,84,102,104,88,120,104],[44,84,44,66]),Q([28,100,44,102,84,102,104,88,120,104],[60,104,54,87])],
+"Lateral raise":["",Q(B,H),Q(B,[116,50,132,44])],
+"Overhead tricep extension":["",Q(B,[104,16,92,30]),Q(B,[104,16,104,-1])],
+"Pull-up / chin-up":["nb",Q([102,30,100,40,100,66,100,84,96,100],[100,23,100,6]),Q([103,6,100,18,100,44,100,62,96,78],[110,20,100,6])],
+"One-arm dumbbell row":["",Q([112,62,100,66,76,72,90,90,84,108],[100,82,100,98]),Q([112,62,100,66,76,72,90,90,84,108],[84,66,88,82])],
+"Reverse fly":["",Q([112,62,100,66,76,72,90,90,84,108],[100,82,100,98]),Q([112,62,100,66,76,72,90,90,84,108],[92,74,84,86])],
+"Dumbbell curl":["",CU[0],CU[1]],
+"Hammer curl":["",CU[0],CU[1]],
+"Bulgarian split squat":["c",Q([87,24,87,36,85,62,103,84,118,108],[87,56,87,74],[70,84,54,94]),Q([91,42,91,54,90,80,118,80,118,108],[90,74,90,92],[72,100,54,94])],
+"Goblet squat":["",Q(B,[102,54,110,44]),Q([102,50,96,62,88,88,114,86,100,108],[102,76,108,64])],
+"Dumbbell Romanian deadlift":["",Q(B,H),Q([120,78,108,80,84,64,97,85,100,108],[108,92,107,104])],
+"Lunges":["",Q([100,24,100,36,100,62,112,84,124,108],H,[90,86,76,108]),Q([100,42,100,54,100,80,124,82,124,108],[100,74,100,92],[92,104,68,106])],
+"Calf raise satu kaki":["n",Q(B,H),Q([100,14,100,26,100,52,100,75,100,98],[100,46,100,64])]
+};
+var RAF=null,SEG=[[1,2],[2,3],[3,4],[2,7],[7,8],[1,5],[5,6]];
+function stopAnim(){if(RAF)cancelAnimationFrame(RAF);RAF=null}
+function pose(a){return a.length<18?a.concat([a[6],a[7],a[8],a[9]]):a}
+function fig(n){var d=ANIM[n];if(!d)return"";
+ var h='<svg id="fig" viewBox="0 -10 200 130" width="100%" style="max-height:230px;display:block;margin-bottom:8px" role="img" aria-label="Animasi gerakan"><line x1="10" y1="110" x2="190" y2="110" stroke="var(--line)" stroke-width="2"/>';
+ if(d[0].indexOf("b")>-1)h+='<line x1="70" y1="6" x2="130" y2="6" stroke="var(--mute)" stroke-width="4" stroke-linecap="round"/>';
+ if(d[0].indexOf("c")>-1)h+='<rect x="38" y="94" width="24" height="16" rx="2" fill="var(--line)"/>';
+ SEG.forEach(function(x,i){h+='<line id="s'+i+'" stroke="var(--acc)" stroke-width="5" stroke-linecap="round" opacity="'+(i==3||i==4?.5:1)+'"/>'});
+ h+='<circle id="hd" r="8" fill="var(--card)" stroke="var(--acc)" stroke-width="4"/>';
+ if(d[0].indexOf("n")<0)h+='<rect id="db" x="-9" y="-3" width="18" height="6" rx="2" fill="var(--ink)"/>';
+ return h+'</svg>'}
+function play(n){stopAnim();var d=ANIM[n];if(!d)return;var a=pose(d[1]),b=pose(d[2]),t0=performance.now(),still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+ function f(t){var p=still?1:.5-.5*Math.cos((t-t0)/2800*2*Math.PI),v=a.map(function(x,i){return x+(b[i]-x)*p});
+  if(!document.getElementById("s0"))return;
+  SEG.forEach(function(g,i){var e=document.getElementById("s"+i);e.setAttribute("x1",v[2*g[0]]);e.setAttribute("y1",v[2*g[0]+1]);e.setAttribute("x2",v[2*g[1]]);e.setAttribute("y2",v[2*g[1]+1])});
+  var hd=document.getElementById("hd");hd.setAttribute("cx",v[0]);hd.setAttribute("cy",v[1]);
+  var db=document.getElementById("db");if(db)db.setAttribute("transform","translate("+v[12]+","+v[13]+")");
+  if(!still)RAF=requestAnimationFrame(f)}
+ f(t0)}
 var WEEK=["Rest","Push","Pull","Legs","Push","Pull","Legs"]; // index = getDay() Minggu=0
 var NAMES=["Min","Sen","Sel","Rab","Kam","Jum","Sab"];
-var openK=null,today=new Date().getDay(), sel=today, state={};
+var openK=null,openName=null,today=new Date().getDay(), sel=today, state={};
 function key(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
 function load(){try{var s=JSON.parse(localStorage.getItem("ppl-rumah")||"{}");if(s.k===key())state=s.v||{}}catch(e){}}
 function save(){try{localStorage.setItem("ppl-rumah",JSON.stringify({k:key(),v:state}))}catch(e){}}
-function render(){
+function render(){stopAnim();
   var wk=document.getElementById("week");wk.innerHTML="";
   NAMES.forEach(function(n,i){var b=document.createElement("button");b.innerHTML=n+"<b>"+WEEK[i][0]+"</b>";
     if(i===sel)b.className="sel";if(i===today)b.className+=" today";
@@ -106,16 +145,16 @@ function render(){
     for(var s=0;s<e[2];s++)html+='<button data-k="'+k+'" data-s="'+s+'" class="'+(got[s]?"on":"")+'" aria-label="Set '+(s+1)+'">'+(s+1)+'</button>';
     var op=openK===k;
     html+='</div><button class="how" data-h="'+k+'" data-n="'+ei+'">'+(op?"Tutup panduan":"Lihat cara gerakan")+'</button>';
-    if(op){var st=HOW[e[0]]||[];html+='<div class="guide"><ol>'+st.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ol><a href="https://www.youtube.com/results?search_query='+encodeURIComponent(e[0]+" tutorial")+'" target="_blank" rel="noopener">Cari video di YouTube</a></div>'}
+    if(op){var st=HOW[e[0]]||[];html+='<div class="guide">'+fig(e[0])+'<ol>'+st.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ol><a href="https://www.youtube.com/results?search_query='+encodeURIComponent(e[0]+" tutorial")+'" target="_blank" rel="noopener">Cari video di YouTube</a></div>'}
     html+='</div>';
   });
   html+='<div class="tips">Pemanasan 5 menit dulu. Untuk menaikkan level: turun 3 detik, tambah repetisi tiap minggu, atau pakai versi satu sisi.</div><button class="reset" id="rs">Reset hari ini</button>';
-  c.innerHTML=html;
+  c.innerHTML=html;if(openK)play(openName);
   document.getElementById("pb").style.width=(total?done/total*100:0)+"%";
   c.querySelectorAll(".sets button").forEach(function(b){b.onclick=function(){
     var k=b.dataset.k,s=+b.dataset.s;state[k]=state[k]||[];state[k][s]=!state[k][s];save();
     if(state[k][s])startTimer(60);render()}});
-  c.querySelectorAll(".how").forEach(function(b){b.onclick=function(){openK=openK===b.dataset.h?null:b.dataset.h;render()}});
+  c.querySelectorAll(".how").forEach(function(b){b.onclick=function(){openK=openK===b.dataset.h?null:b.dataset.h;openName=list[+b.dataset.n][0];render()}});
   document.getElementById("rs").onclick=function(){list.forEach(function(e,i){delete state[day+i]});save();render()};
 }
 var tm=null,left=0;
